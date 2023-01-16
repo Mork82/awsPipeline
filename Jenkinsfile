@@ -12,8 +12,7 @@ pipeline {
      environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-         sh 'echo $AWS_ACCESS_KEY_ID'
-         sh 'echo $AWS_SECRET_ACCESS_KEY'
+        
     }
 
 
@@ -21,6 +20,8 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
+                    sh 'echo $AWS_ACCESS_KEY_ID'
+                    sh 'echo $AWS_SECRET_ACCESS_KEY'
                         dir("terraform")
                         {
                             git "https://github.com/Mork82/awsPipeline.git"
