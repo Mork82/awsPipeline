@@ -2,7 +2,7 @@
 
 terraform {
   backend "s3" {
-    bucket = "jenkins-bucket43982789"
+    bucket = "prueba-pipeline-000001"
     key    = "remote.tfstate"
     region = "us-east-1"
   }
